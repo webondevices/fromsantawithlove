@@ -9,8 +9,6 @@ function initialize() {
   const plansInput = document.getElementById("plans");
   const restartButtons = document.querySelectorAll(".restart");
   const cancelButton = document.querySelector(".cancel");
-  const printedLetterButton = document.getElementById("printedLetterButton");
-  const designRadioButtons = document.querySelectorAll("input[name='design']");
   const popup = document.querySelector(".popup");
   const popupClose = document.getElementById("close-popup");
   const popupOpen = document.getElementById("open-popup");
@@ -47,12 +45,6 @@ function initialize() {
       controller.abort(); // Cancel the fetch request
     }
     resetPage();
-  });
-
-  designRadioButtons.forEach((radio) => {
-    radio.addEventListener("change", () => {
-      printedLetterButton.setAttribute("data-item-custom1-value", radio.value);
-    });
   });
 
   popupOpen.addEventListener("click", () => {
@@ -180,7 +172,6 @@ async function handleSubmit() {
   const highlight = document.getElementById("highlight").value.trim();
   const plans = document.getElementById("plans").value.trim();
   const resultContainer = document.getElementById("resultContainer");
-  const printedLetterButton = document.getElementById("printedLetterButton");
 
   if (!childName) {
     return;
@@ -222,15 +213,9 @@ async function handleSubmit() {
       const letterContent = extractLetterContent(generatedLetter);
       resultContainer.innerHTML = `<p>${letterContent}</p>`;
       resultContainer.style.display = "block";
-      printedLetterButton.setAttribute(
-        "data-item-custom2-value",
-        letterContent
-      );
-      printedLetterButton.setAttribute("data-item-custom3-value", character);
 
       // Update to result state
       updateBodyClass("loading", "result");
-      printedLetterButton.style.display = "inline-block";
     } else {
       // Update to error state
       updateBodyClass("loading", "error");
