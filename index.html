@@ -62,7 +62,12 @@
         </p>
         <hr />
         <p class="bold">(1/4) Who are we writing a letter for today?</p>
-        <input id="childName" type="text" placeholder="Their first name" />
+        <input
+          maxlength="25"
+          id="childName"
+          type="text"
+          placeholder="Their first name"
+        />
         <p class="bold">Who should the letter come from?</p>
         <select id="character">
           <option value="Santa Claus" selected="selected">Santa Claus</option>
@@ -76,7 +81,12 @@
           (2/4) <span class="name">Child</span>'s favourite thing about the
           holiday season?
         </p>
-        <input id="favourite" type="text" placeholder="(optional)" />
+        <input
+          maxlength="50"
+          id="favourite"
+          type="text"
+          placeholder="(optional)"
+        />
         <button class="button next">Next</button>
       </div>
 
@@ -85,7 +95,12 @@
           (3/4) <span class="name">Child</span>'s special achievement or
           highlight from this year?
         </p>
-        <input id="highlight" type="text" placeholder="(optional)" />
+        <input
+          maxlength="50"
+          id="highlight"
+          type="text"
+          placeholder="(optional)"
+        />
         <button class="button next">Next</button>
       </div>
 
@@ -93,7 +108,7 @@
         <p class="bold">
           (4/4) Any plans <span class="name">child</span> has for the next year?
         </p>
-        <input id="plans" type="text" placeholder="(optional)" />
+        <input maxlength="50" id="plans" type="text" placeholder="(optional)" />
         <button class="button next">Submit</button>
       </div>
 
