@@ -157,8 +157,9 @@ function updateBodyClass(fromClass, toClass) {
 
 // Function to extract the letter content between @@ and $$
 const extractLetterContent = (text) => {
-  const match = text.match(/@@([\s\S]*?)\$\$/);
-  return match ? match[1].trim() : text;
+  const afterStart = text.split("@@")[1] || text;
+  const beforeEnd = afterStart.split("$$")[0];
+  return beforeEnd.trim();
 };
 
 // Function to handle form submission
