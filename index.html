@@ -132,6 +132,11 @@
           accusamus dicta eius totam assumenda consectetur, perspiciatis commodi
           quae, ipsa error, nulla deleniti sunt aliquam neque labore culpa.
         </div>
+
+        <button id="copyToClipboard" class="button copy-button">
+          Copy Letter to Clipboard
+        </button>
+
         <p class="medium">
           This letter, written just for <span class="name">child</span>, can now
           be printed and delivered to your doorstep!
@@ -148,50 +153,29 @@
         />
         <p class="small">Your letter hand prepared by our team</p>
 
-        <p>Choose your design:</p>
+        <p>Available designs:</p>
         <div class="designs">
-          <input
-            type="radio"
-            name="design"
-            id="design-1"
-            value="Simple"
-            checked
-          />
-          <label for="design-1" class="design1">
+          <div class="design1">
             <img src="design1.jpg" class="design" />
-            <p class="small">Design 1 selected</p>
-          </label>
-          <input type="radio" name="design" id="design-2" value="Styly" />
-          <label for="design-2" class="design2">
+            <p class="small">Design 1</p>
+          </div>
+          <div class="design2">
             <img src="design2.jpg" class="design" />
-            <p class="small">Design 2 selected</p>
-          </label>
+            <p class="small">Design 2</p>
+          </div>
         </div>
 
         <p class="medium">No hidden fees!</p>
         <p class="medium">FREE delivery included!</p>
 
-        <button
-          id="printedLetterButton"
-          class="button snipcart-add-item"
-          data-item-id="printed-letter"
-          data-item-price='{"usd": 24.99, "gbp": 16.99,  "eur": 19.99}'
-          data-item-description="Physically printed personalised letter from Santa Claus"
-          data-item-image="/santa-printed.webp"
-          data-item-name="Personalised Printed Letter from Santa"
-          data-item-custom1-name="Letter design"
-          data-item-custom1-options="Simple|Styly"
-          data-item-custom1-value="Styly"
-          data-item-custom2-name="Personalised letter"
-          data-item-custom2-type="readonly"
-          data-item-custom2-value=""
-          data-item-custom3-name="Character"
-          data-item-custom3-type="readonly"
-          data-item-custom3-value=""
-          data-item-shippable="true"
+        <a
+          href="https://www.etsy.com/uk/listing/1807387722/a-truly-personal-letter-from-santa-or"
+          target="_blank"
+          id="orderOnEtsy"
+          class="button"
         >
-          Add to Basket - £16
-        </button>
+          Order on Etsy - £10
+        </a>
       </div>
       <footer>
         <p>© 2024 Web on Devices Ltd, United Kingdom. All rights reserved</p>
@@ -225,100 +209,12 @@
           With each letter, we’re not only spreading joy but also supporting the
           future of technology and innovation.
         </p>
-        <h3>
-          Can you get a letter from Father Christmas instead of Santa Claus?
-        </h3>
         <p>
-          Yes, you can choose between Santa Claus and Father Christmas when
+          And you can choose between Santa Claus and Father Christmas when
           creating your personalised letter.
         </p>
         <button class="button" type="button" id="close-popup">Close</button>
       </div>
     </div>
-    <script>
-      window.SnipcartSettings = {
-        publicApiKey:
-          "ZGMwYWI2MWUtMTllZC00NzE5LWFkYjYtMjk4MWQ5NTZlMjhkNjM4NTk2OTE0NDgxNTUyNjE1",
-        loadStrategy: "on-user-interaction",
-      };
-
-      (() => {
-        var c, d;
-        (d = (c = window.SnipcartSettings).version) != null ||
-          (c.version = "3.0");
-        var s, S;
-        (S = (s = window.SnipcartSettings).timeoutDuration) != null ||
-          (s.timeoutDuration = 2750);
-        var l, p;
-        (p = (l = window.SnipcartSettings).domain) != null ||
-          (l.domain = "cdn.snipcart.com");
-        var w, u;
-        (u = (w = window.SnipcartSettings).protocol) != null ||
-          (w.protocol = "https");
-        var f =
-            window.SnipcartSettings.version.includes("v3.0.0-ci") ||
-            (window.SnipcartSettings.version != "3.0" &&
-              window.SnipcartSettings.version.localeCompare("3.4.0", void 0, {
-                numeric: !0,
-                sensitivity: "base",
-              }) === -1),
-          m = ["focus", "mouseover", "touchmove", "scroll", "keydown"];
-        window.LoadSnipcart = o;
-        document.readyState === "loading"
-          ? document.addEventListener("DOMContentLoaded", r)
-          : r();
-        function r() {
-          window.SnipcartSettings.loadStrategy
-            ? window.SnipcartSettings.loadStrategy === "on-user-interaction" &&
-              (m.forEach((t) => document.addEventListener(t, o)),
-              setTimeout(o, window.SnipcartSettings.timeoutDuration))
-            : o();
-        }
-        var a = !1;
-        function o() {
-          if (a) return;
-          a = !0;
-          let t = document.getElementsByTagName("head")[0],
-            e = document.querySelector("#snipcart"),
-            i = document.querySelector(
-              `src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`
-            ),
-            n = document.querySelector(
-              `link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`
-            );
-          e ||
-            ((e = document.createElement("div")),
-            (e.id = "snipcart"),
-            e.setAttribute("hidden", "true"),
-            document.body.appendChild(e)),
-            v(e),
-            i ||
-              ((i = document.createElement("script")),
-              (i.src = `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`),
-              (i.async = !0),
-              t.appendChild(i)),
-            n ||
-              ((n = document.createElement("link")),
-              (n.rel = "stylesheet"),
-              (n.type = "text/css"),
-              (n.href = `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`),
-              t.prepend(n)),
-            m.forEach((g) => document.removeEventListener(g, o));
-        }
-        function v(t) {
-          !f ||
-            ((t.dataset.apiKey = window.SnipcartSettings.publicApiKey),
-            window.SnipcartSettings.addProductBehavior &&
-              (t.dataset.configAddProductBehavior =
-                window.SnipcartSettings.addProductBehavior),
-            window.SnipcartSettings.modalStyle &&
-              (t.dataset.configModalStyle = window.SnipcartSettings.modalStyle),
-            window.SnipcartSettings.currency &&
-              (t.dataset.currency = window.SnipcartSettings.currency),
-            window.SnipcartSettings.templatesUrl &&
-              (t.dataset.templatesUrl = window.SnipcartSettings.templatesUrl));
-        }
-      })();
-    </script>
   </body>
 </html>

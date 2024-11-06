@@ -49,13 +49,6 @@ function initialize() {
     resetPage();
   });
 
-  printedLetterButton.addEventListener("click", () => {
-    printedLetterButton.setAttribute(
-      "data-item-custom2-value",
-      generatedLetter
-    );
-  });
-
   designRadioButtons.forEach((radio) => {
     radio.addEventListener("change", () => {
       printedLetterButton.setAttribute("data-item-custom1-value", radio.value);
@@ -67,6 +60,24 @@ function initialize() {
   });
   popupClose.addEventListener("click", () => {
     popup.style.display = "none";
+  });
+
+  document.getElementById("copyToClipboard").addEventListener("click", () => {
+    // Get the letter text and replace any chain of spaces with a single space
+    const resultContainer =
+      document.getElementById("resultContainer").textContent;
+    const cleanedText = resultContainer.replace(/\s+/g, " ");
+
+    // Copy the cleaned text to the clipboard
+    navigator.clipboard.writeText(cleanedText).then(() => {
+      const copyButton = document.getElementById("copyToClipboard");
+      copyButton.textContent = "Letter copied!";
+
+      // Revert back to the original text after 2 seconds
+      setTimeout(() => {
+        copyButton.textContent = "Copy Letter to Clipboard";
+      }, 4000);
+    });
   });
 }
 
@@ -134,7 +145,8 @@ function resetPage() {
   updateNameSpans("child");
 
   // Reset body class to the initial step
-  body.className = "step-1";
+  // body.className = "step-1";
+  body.className = "result";
 }
 
 // Function to update all character spans
