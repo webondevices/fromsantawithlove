@@ -145,8 +145,7 @@ function resetPage() {
   updateNameSpans("child");
 
   // Reset body class to the initial step
-  // body.className = "step-1";
-  body.className = "result";
+  body.className = "step-1";
 }
 
 // Function to update all character spans
